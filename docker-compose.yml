@@ -1,0 +1,16 @@
+version: '2'
+services:
+  dev:
+    build:
+      context: .
+    env_file: .env
+    environment:
+      - RAILS_ENV=development
+    ports:
+     - "3000:3000"
+    volumes:
+     - .:/code
+  db:
+    image: postgres:12
+    environment:
+      - POSTGRES_PASSWORD=password

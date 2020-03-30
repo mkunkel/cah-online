@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+yarn install
+bundle check || bundle install
+
+bundle exec rails s -b 0.0.0.0 -p $HOST_PORT --pid /tmp/cah.pid
